@@ -22,14 +22,14 @@ const middleware = require('../middleware/auth');
 // router.get('/:id', Merchant.getMerchant);
 // router.get('/jwt/:id', middleware.validate, Merchant.getMerchant);
 
-router.post('/', Merchant.addMerchant);
+// router.post('/', Merchant.addMerchant);
 router.post('/jwt', middleware.validate, Merchant.addMerchant);
 // router.post('/jwt2', middleware.validate2, Merchant.addMerchant);
 
 // router.put('/:id', Merchant.updateMerchant);
 // router.put('/jwt/:id', middleware.validate, Merchant.updateMerchant);
 
-router.delete('/:id', Merchant.deleteMerchant);
+// router.delete('/:id', Merchant.deleteMerchant);
 router.delete('/jwt/:id', middleware.validate, Merchant.deleteMerchant);
 
 //---------------------------------------------------------------------------------------------------------------------

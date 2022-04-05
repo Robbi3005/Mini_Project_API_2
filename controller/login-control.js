@@ -55,7 +55,6 @@ class Login {
          * alamat...}
          * ]
          */
-        //
 
         if (!exist[0]) {
             res.status(401).json({ message: 'wrong id' })
@@ -67,7 +66,7 @@ class Login {
 
             const token = jwt.sign({
                 id: exist[0].id,
-                password: exist[0].password,
+                // password: exist[0].password,
                 // email: exist[0].email, // bisa juga di tambah name
             }, 
             process.env.SECRET || 'jkbjscco3432f')
@@ -93,7 +92,7 @@ class Login {
 
     //         const token = jwt.sign({
     //             id: exist[0].id,
-    //             password: exist[0].password,
+    //             // password: exist[0].password,
     //             // email: exist[0].email, // bisa juga di tambah name
     //         }, 
     //         process.env.SECRET2)

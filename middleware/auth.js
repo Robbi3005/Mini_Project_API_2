@@ -28,6 +28,7 @@ class Auth {
         console.log(req.headers)
 
         const validate = jwt.verify(req.headers.token, 'ASDacdvds12354')
+        
         // authorization bisa di ganti bebas, nanti di sesuaikan key di postman
         // jadi jwt ini akan mengembalikan/respons apa yang tadi di tulis di req.body
         // yang tadi di assign di login-control adalah id (id: exist[0].id)
@@ -44,7 +45,7 @@ class Auth {
          */
 
         if (validate) {
-            // req.merchant_id = validate.id // merchant_id ini penamaannya bebas
+            req.merchant_id = validate.id // merchant_id ini penamaannya bebas
             next()
         } else {
             res.status(401).json({ message: 'Unauthorized' })
